@@ -27,7 +27,7 @@ const AppHeader = () => {
   }
 
   return (
-    <CHeader position="sticky" className="mb-4">
+    <CHeader position="sticky" className="mb-4 shadow">
       <CContainer md>
         <CHeaderBrand className="d-none d-md-flex" to="/">
           {textTitle()}

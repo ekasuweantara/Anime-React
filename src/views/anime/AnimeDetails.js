@@ -35,6 +35,20 @@ const AnimeDetails = () => {
   const [showModalAddAnime, setShowModalAddAnime] = useState(false);
 
   useEffect(() => {
+    dispatch({ type: 'setBasic', isShowSpinner: loading });
+  }, [loading])
+
+  useEffect(() => {
+    if (error) {
+      dispatch({ type: 'setBasic', toast: {
+        isShow: true,
+        type: 'danger',
+        msg: 'Internal service error.'
+      }});
+    }
+  }, [error])
+
+  useEffect(() => {
     if (data) {
       const { Media } = data;
       setAnime({ ...Media });
@@ -212,12 +226,12 @@ const AnimeDetails = () => {
                     </div>
                     <div className="mt-1 mb-2">
                       <ul className="font-size-11">
-                        <li>{`Score: ${anime?.averageScore}`}</li>
-                        <li>{`Episode: ${anime?.episodes}`}</li>
-                        <li>{`Format: ${anime?.format}`}</li>
-                        <li>{`Popularity: ${anime?.popularity}`}</li>
-                        <li>{`Season: ${anime?.season}`}</li>
-                        <li>{`Status: ${anime?.status}`}</li>
+                        <li>{`Score: ${anime?.averageScore || ""}`}</li>
+                        <li>{`Episode: ${anime?.episodes || ""}`}</li>
+                        <li>{`Format: ${anime?.format || ""}`}</li>
+                        <li>{`Popularity: ${anime?.popularity || ""}`}</li>
+                        <li>{`Season: ${anime?.season || ""}`}</li>
+                        <li>{`Status: ${anime?.status || ""}`}</li>
                       </ul>
                     </div>
                     <div className="mt-1 mb-3">

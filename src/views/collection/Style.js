@@ -14,6 +14,9 @@ export const CardImage = styled.div`
   height: 400px;
   border-radius: 10px;
   box-shadow: 0 0.5rem 1rem rgb(0 0 21 / 15%);
+  @media (max-width: 480px) {
+    height: 300px;
+  }
 `;
 
 export const Card = styled(CCard)`
