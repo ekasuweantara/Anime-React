@@ -107,7 +107,7 @@ const Anime = () => {
           <CRow className="mb-3 justify-content-end">
             <CCol className="my-auto">
               <h4 className="mb-0">
-                ANIME
+                ANIME / MANGA
               </h4>
             </CCol>
             <CCol xs={12} md={6} lg={4} className="my-auto">
